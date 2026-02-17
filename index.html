@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GourmetManager - Gestion de Recettes</title>
-    <link rel="stylesheet" href="css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -49,14 +49,14 @@
         <section class="add-recipe-form">
             <h2>Ajouter une Nouvelle Recette</h2>
             <form id="recipe-form">
-                <label>Titre de la Recette</label>
-                <input type="text" placeholder="Ex: Tarte aux pommes" required>
+                <label for="recipe-title">Titre de la Recette</label>
+                <input type="text" id="recipe-title" placeholder="Ex: Tarte aux pommes" required>
                 
-                <label>Description</label>
-                <textarea placeholder="Description de la recette..."></textarea>
+                <label for="recipe-desc">Description</label>
+                <textarea id="recipe-desc" placeholder="Description de la recette..."></textarea>
 
-                <label>Catégorie</label>
-                <select>
+                <label for="recipe-cat">Catégorie</label>
+                <select id="recipe-cat">
                     <option value="entrée">Entrée</option>
                     <option value="plat">Plat principal</option>
                     <option value="dessert">Dessert</option>
