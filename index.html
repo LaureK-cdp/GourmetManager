@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GourmetManager - Gestion de Recettes</title>
+    <link rel="stylesheet" href="css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>GourmetManager</h1>
+            <p>Créez et gérez vos recettes facilement.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="add-recipe-form">
+            <h2>Ajouter une nouvelle recette</h2>
+            <form id="recipe-form">
+                <div class="form-group-main">
+                    <input type="text" placeholder="Nom de la recette" required>
+                    <select>
+                        <option value="">Difficulté</option>
+                        <option value="facile">Facile</option>
+                        <option value="moyen">Moyen</option>
+                        <option value="difficile">Difficile</option>
+                    </select>
+                </div>
+
+                <h3>Ingrédients</h3>
+                <div id="ingredients-container">
+                    <div class="ingredient-row" style="display: flex; gap: 10px; margin-bottom: 10px;">
+                        <input type="text" name="ingredients[]" placeholder="Ingrédient" required>
+                        <input type="text" name="quantities[]" placeholder="Quantité (ex: 200g)">
+                    </div>
+                </div>
+                
+                <button type="button" id="add-ingredient" class="btn-secondary">
+                    + Ajouter un ingrédient
+                </button>
+
+                <div style="margin-top: 20px;">
+                    <button type="submit" class="btn-primary">Enregistrer la recette</button>
+                </div>
+            </form>
+        </section>
+
+        <hr style="margin: 40px 0;">
+
+        <section>
+            <h2>Mes Recettes</h2>
+            <div class="recipe-grid">
+                <article class="recipe-card">
+                    <div class="recipe-image" style="background: #ddd; height: 150px;"></div>
+                    <div class="recipe-content">
+                        <h3>Tarte aux Pommes</h3>
+                        <p>Une recette classique et savoureuse.</p>
+                    </div>
+                </article>
+                <article class="recipe-card">
+                    <div class="recipe-image" style="background: #ccc; height: 150px;"></div>
+                    <div class="recipe-content">
+                        <h3>Salade César</h3>
+                        <p>Fraîcheur et croquant au rendez-vous.</p>
+                    </div>
+                </article>
+                <article class="recipe-card">
+                    <div class="recipe-image" style="background: #bbb; height: 150px;"></div>
+                    <div class="recipe-content">
+                        <h3>Pâtes Carbonara</h3>
+                        <p>Le secret est dans la sauce.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 GourmetManager - Projet Examen Bloc 1</p>
+        </div>
+    </footer>
+
+    <script src="java.js"></script>
+</body>
+</html>

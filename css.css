@@ -1,0 +1,61 @@
+/* ==========================================================================
+   STYLE GÉNÉRAL (MOBILE & TABLETTE PAR DÉFAUT)
+   ========================================================================== */
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   MEDIA QUERY : DESKTOP (Écrans standards >= 1024px)
+   ========================================================================== */
+@media screen and (min-width: 1024px) {
+    /* On passe à une grille de 3 recettes par ligne */
+    .recipe-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    /* Le formulaire d'ajout s'affiche sur deux colonnes pour plus de confort */
+    .form-group-main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* ==========================================================================
+   MEDIA QUERY : DESKTOP XL (Très grands écrans >= 1440px)
+   ========================================================================== */
+@media screen and (min-width: 1440px) {
+    /* On élargit le conteneur pour profiter de l'espace */
+    .container {
+        max-width: 1300px;
+    }
+
+    /* On peut passer à 4 recettes par ligne sur les écrans larges */
+    .recipe-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    /* On augmente légèrement la taille de la police pour le confort visuel */
+    body {
+        font-size: 1.1rem;
+    }
+
+    /* Les images de recettes peuvent être plus grandes */
+    .recipe-image {
+        height: 250px;
+    }
+}
