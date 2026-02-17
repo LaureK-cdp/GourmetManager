@@ -1,35 +1,79 @@
 /* ==========================================================================
-   STYLE GÉNÉRAL (MOBILE & TABLETTE PAR DÉFAUT)
+   STYLE GÉNÉRAL & COULEURS (MOBILE FIRST)
    ========================================================================== */
-.container {
-    width: 90%;
-    margin: 0 auto;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f7; /* Gris clair comme sur la photo */
+    margin: 0;
+    color: #333;
 }
 
+header, footer {
+    background-color: #34495e; /* Bleu foncé anthracite */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 20px auto;
+}
+
+/* Boutons Orange */
+.btn-primary, .btn-secondary, .btn-orange {
+    background-color: #f39c12; /* Orange des maquettes */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Cartes de recettes */
 .recipe-card {
-    display: flex;
-    flex-direction: column;
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
     margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Liste des catégories (Boutons empilés) */
+.category-list button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Le formulaire (Bloc foncé à droite) */
+.add-recipe-form {
+    background-color: #34495e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
 }
 
 /* ==========================================================================
-   MEDIA QUERY : DESKTOP (Écrans standards >= 1024px)
+   MEDIA QUERY : DESKTOP (Écrans >= 1024px)
    ========================================================================== */
 @media screen and (min-width: 1024px) {
-    /* On passe à une grille de 3 recettes par ligne */
-    .recipe-grid {
+    
+    /* LA MAGIE ICI : On crée les 3 colonnes de la maquette desktop.png */
+    main.container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 200px 1fr 300px; /* Gauche | Milieu | Droite */
         gap: 30px;
+        align-items: start;
     }
 
-    /* Le formulaire d'ajout s'affiche sur deux colonnes pour plus de confort */
-    .form-group-main {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
-    }
-
+    /* On remet le titre au centre pour le desktop */
     header h1 {
         font-size: 2.5rem;
     }
@@ -39,23 +83,12 @@
    MEDIA QUERY : DESKTOP XL (Très grands écrans >= 1440px)
    ========================================================================== */
 @media screen and (min-width: 1440px) {
-    /* On élargit le conteneur pour profiter de l'espace */
     .container {
         max-width: 1300px;
     }
-
-    /* On peut passer à 4 recettes par ligne sur les écrans larges */
-    .recipe-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    /* On augmente légèrement la taille de la police pour le confort visuel */
-    body {
-        font-size: 1.1rem;
-    }
-
-    /* Les images de recettes peuvent être plus grandes */
-    .recipe-image {
-        height: 250px;
+    
+    /* On peut élargir un peu les colonnes latérales */
+    main.container {
+        grid-template-columns: 250px 1fr 350px;
     }
 }
